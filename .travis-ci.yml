@@ -1,0 +1,14 @@
+aomsudo: false
+language: node_js
+node_js:
+  - "4.0.0"
+  - "5.4.1"
+  - "6.2.1"
+sudo: false
+addons:
+  code_climate:
+    repo_token: b3e912467e135392519895c4c20e99842574d8204c350811219cd23c2bf6d062
+after_script:
+  - npm i -g istanbul codeclimate-test-reporter
+  - npm run coverage
+  - codeclimate-test-reporter < ./coverage/lcov.info

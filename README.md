@@ -1,5 +1,10 @@
 # Readme
 
+[![Code Climate](https://codeclimate.com/github/LestaD/timeout.js/badges/gpa.svg)](https://codeclimate.com/github/LestaD/timeout.js)
+[![Test Coverage](https://codeclimate.com/github/LestaD/timeout.js/badges/coverage.svg)](https://codeclimate.com/github/LestaD/timeout.js/coverage)
+[![Issue Count](https://codeclimate.com/github/LestaD/timeout.js/badges/issue_count.svg)](https://codeclimate.com/github/LestaD/timeout.js)
+[![Build Status](https://travis-ci.org/LestaD/timeout.js.svg?branch=master)](https://travis-ci.org/LestaD/timeout.js)
+
 Simple promise-based timeout
 
 ## Installation
