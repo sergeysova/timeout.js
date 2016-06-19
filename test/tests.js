@@ -18,4 +18,5 @@ var b = tm(200, "ok, return good")
 .then(c => console.log(c))
 .catch(e => console.error('Fail:', e));
 
-
+var c = tm(300, 'resolve and reject in single .then: OK')
+.then(e => console.log(e), e => console.error(e));
