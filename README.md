@@ -22,6 +22,11 @@ const exm = timeout(1000)
   .catch(() => console.log('Breaked!'));
 
 exm.break();
+
+
+// resolve data after time out
+timeout(200, "Data to be resolved")
+  .then(data => console.log(data));
 ```
 
 

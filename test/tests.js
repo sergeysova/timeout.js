@@ -13,3 +13,9 @@ var a = tm(100)
 .then(() => console.log('1. ok'))
 .then(() => console.log('2. ok'))
 .then(() => console.log('3. all ok'));
+
+var b = tm(200, "ok, return good")
+.then(c => console.log(c))
+.catch(e => console.error('Fail:', e));
+
+
