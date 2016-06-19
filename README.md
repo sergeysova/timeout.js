@@ -19,6 +19,7 @@ Simple promise-based timeout
 ## Installation
 
 [![npm](https://img.shields.io/npm/v/timeout.js.svg?maxAge=2592000)](https://npmjs.com/timeout.js)
+[![Minimum node](https://img.shields.io/badge/engines-node%20%3E%3D%204-green.svg)](https://github.com/LestaD/timeout.js/blob/master/package.json)
 
 ```bash
 npm install --save timeout.js

@@ -16,6 +16,9 @@
     "promise",
     "es6"
   ],
+  "engines": {
+    "node": ">= 4"
+  },
   "author": "Sergey Sova <i.am@lestad.net> (https://lestad.top)",
   "license": "WTFPL",
   "bugs": {
