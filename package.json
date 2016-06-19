@@ -1,6 +1,6 @@
 {
   "name": "timeout.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple promise-based timeout",
   "main": "lib/timeout.js",
   "scripts": {
