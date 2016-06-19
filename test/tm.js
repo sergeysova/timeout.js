@@ -1,12 +1,12 @@
-const should = require('should');
-const tm = process.env.COVERAGE
+var should = require('should');
+var tm = process.env.COVERAGE
   ? require('../coverage/timeout')
   : require('../lib/timeout');
 
 
 describe('timeout.js', () => {
 
-  it('is constructor', () => {
+  it('is varructor', () => {
     should(tm).be.a.Function;
   });
 
@@ -28,7 +28,7 @@ describe('timeout.js', () => {
 
   it('resolve', function(done) {
     this.timeout(120);
-    const t = tm(30);
+    var t = tm(30);
 
     t.then(_ => done());
     t.catch(e => should.fail(e));
@@ -36,8 +36,8 @@ describe('timeout.js', () => {
 
   it('resolve chaining', function(done) {
     this.timeout(120);
-    const t = tm(30);
-    let called = 0;
+    var t = tm(30);
+    var called = 0;
 
     function ch() {
       ++called >= 4 ? done() : null;
@@ -51,7 +51,7 @@ describe('timeout.js', () => {
 
   it('reject', function(done) {
     this.timeout(120);
-    const t = tm(30);
+    var t = tm(30);
 
     t.catch(done);
     t.then(_ => should.fail());
@@ -60,7 +60,7 @@ describe('timeout.js', () => {
 
   it('pass value', function(done) {
     this.timeout(60);
-    const t = tm(30, "value");
+    var t = tm(30, "value");
 
     t.then(data => {
       should(data).be.equal('value');
