@@ -8,6 +8,9 @@
     "build": "babel ./src/ --out-dir ./lib/",
     "coverage": "istanbul cover node_modules/.bin/_mocha -- -r should -R spec"
   },
+  "directories": {
+    "lib": "./lib"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LestaD/timeout.js.git"
