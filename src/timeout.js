@@ -12,33 +12,33 @@ class Timeout {
     return this;
   }
 
-  then(f, c) {
-    this._pm.promise.then(f, c);
-    return this;
+  then(func, ctch) {
+    return this._pm.promise.then(func, ctch);
   }
 
-  catch(f) {
-    this._pm.promise.catch(f);
-    return this;
+  catch(func) {
+    return this._pm.promise.catch(func);
   }
 
-  chain(f) {
-    this._pm.promise.chain(f);
-    return this;
+  chain(func) {
+    return this._pm.promise.chain(func);
   }
 }
 
+module.exports = timeout;
 
-module.exports =
 function timeout(milliseconds, resolveData) {
   if (typeof milliseconds !== 'number') {
-    throw new TypeError('Milliseconds not a number');
+    throw new TypeError('Milliseconds should be number');
   }
 
   if (milliseconds < 0) {
-    throw new Error('Timeout must be more than 0')
+    throw new Error('Milliseconds should be more than 0');
   }
 
-  var pmtm = new Timeout(milliseconds, resolveData);
-  return pmtm;
+  return new Timeout(milliseconds, resolveData);
+}
+
+timeout.make = function(milliseconds, data) {
+  return (override) => timeout(milliseconds, override || data);
 }

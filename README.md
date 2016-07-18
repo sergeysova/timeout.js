@@ -40,12 +40,54 @@ const exm = timeout(1000)
   .then(() => console.log('Called!'))
   .catch(() => console.log('Breaked!'));
 
+// stop timeout and reject promise
 exm.break();
 
 
 // resolve data after time out
 timeout(200, "Data to be resolved")
   .then(data => console.log(data));
+```
+
+### Timeout chaining
+
+```js
+const timeout = require('timeout.js');
+
+timeout(300, 'data')
+.then(data => timeout(100, data))
+.then(timeout.make(100)) // simple
+.then(data => {
+  assert(data === 'data');
+})
+.catch(error => console.error(error));
+
+
+// create timeout with predefined time
+const out = timeout.make(200);
+
+out().then(() => element.hide());
+
+
+// with data
+const waitFor = timeout.make(500);
+
+waitFor({ user: 123 })
+.then(user => request('/user', user))
+.then(response => console.log(response.user))
+.catch(error => debug(error));
+
+// make timeout with predefined data
+const waitData = timeout.make(100, 'data');
+
+waitData()
+.then(data => data === 'data');
+
+
+// override
+
+waitData('foo')
+.then(data => data === 'foo');
 ```
 
 
