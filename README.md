@@ -36,8 +36,9 @@ const timeout = require('timeout.js');
 timeout(200).then(() => console.log('Okey'));
 
 // call catch after .break() called
-const exm = timeout(1000)
-  .then(() => console.log('Called!'))
+const exm = timeout(1000);
+
+exm.then(() => console.log('Called!'))
   .catch(() => console.log('Breaked!'));
 
 // stop timeout and reject promise
