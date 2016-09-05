@@ -11,20 +11,24 @@ class Timeout {
 
   break() {
     clearTimeout(this._tm);
+    this._pm.catch(err => null);
     this._rej();
     return this;
   }
 
   then(func, ctch) {
-    return this._pm.then(func, ctch);
+    this._pm.then(func, ctch);
+    return this;
   }
 
   catch(func) {
-    return this._pm.catch(func);
+    this._pm.catch(func);
+    return this;
   }
 
   chain(func) {
-    return this._pm.chain(func);
+    this._pm.chain(func);
+    return this;
   }
 }
 
