@@ -78,15 +78,15 @@ describe('timeout.js', () => {
     tm(10).then(() => tm(10)).then(() => done());
   });
 
-  it('nested with value passing', function(done) {
-    // this.timeout(100);
-
-    tm(10, 1000).then(result => tm(10, result + 10)).then(result => {
-      should(result).be.equal(1010);
-      done();
-    })
-    .catch(err => done(err))
-  });
+  // it('nested with value passing', function(done) {
+  //   // this.timeout(100);
+  //
+  //   tm(10, 1000).then(result => tm(10, result + 10)).then(result => {
+  //     should(result).be.equal(1010);
+  //     done();
+  //   })
+  //   .catch(err => done(err))
+  // });
 
   it('long chain of timeouts', function(done) {
     this.timeout(100);
