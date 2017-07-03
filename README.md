@@ -46,8 +46,28 @@ exm.break();
 
 
 // resolve data after time out
-timeout(200, "Data to be resolved")
+timeout(500, "Data to be resolved")
   .then(data => console.log(data));
+```
+
+### Async/Await
+
+```js
+import timeout from 'timeout.js'
+
+function withData() {
+  return timeout(300, 'data')
+}
+
+async function main() {
+  await timeout(200)
+  console.log('After 200 ms')
+
+  const data = await withData()
+  console.log(`After 0.5s with ${data}`)
+}
+
+main()
 ```
 
 ### Timeout chaining
